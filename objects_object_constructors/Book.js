@@ -5,6 +5,10 @@ export default function Book(title, author, pages, read) {
     this.read = read;
 
     this.info = function() {
-        return `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read'}`
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? 'read' : 'not read'}`
+    }
+
+    this.toggleRead = function() {
+        this.read = !this.read;
     }
 }
