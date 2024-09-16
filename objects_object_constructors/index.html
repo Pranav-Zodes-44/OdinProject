@@ -9,6 +9,28 @@
 </head>
 <body>
     <h1>Hello</h1>
-    <div id="books" class="books-container"></div>
+    <div id="books" class="books-list"></div>
+
+    <dialog id="add-book-dialog">
+        <form id="add-book-form">
+            <div class="book-inputs">
+                <div class="input-container">
+                    <label>Title:</label>
+                    <input type="text" id="book-title" name="book-title" required/>
+                </div>
+                <div class="input-container">
+                    <label>Author:</label>
+                    <input type="text" id="book-author" name="book-author" required/>
+                </div>
+                <div class="input-container">
+                    <label>Pages:</label>
+                    <input type="number" id="book-pages" name="book-pages" required/>
+                </div>
+            </div>
+            <button id="close-dialog-btn" type="reset">Close</button>
+            <button id="submit-dialog-btn" type="submit">Add</button>
+        </form>
+    </dialog>
+    <button id="add-btn">+</button>
 </body>
 </html>
