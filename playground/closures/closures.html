@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <h1>Closures, encapsulation, factory functions</h1>
+    <script>
+        function createGame(gameName) {
+            let score = 0;
+
+            return function win() {
+                score++;
+                return `Your ${gameName} score is ${score}`
+            }
+        }
+        const football = createGame('football')
+
+        const calculator = (function () {
+            const add = (a, b) => a+b;
+            const minus = (a, b) => a-b;
+            const multiply = (a, b) => a*b;
+            const divide = (a, b) => a/b;
+
+            return { add, minus, multiply, divide };
+        })();
+    </script>
+</body>
+</html>
