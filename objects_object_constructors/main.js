@@ -39,9 +39,9 @@ function addBookToDOM(book) {
 
 function createDeleteButton(index, bookContainer) {
 	let deleteButton = document.createElement('button');
-	deleteButton.classList.add('delete-button');
+	deleteButton.classList.add('book-icon');
 	deleteButton.id = `delete-button-${index}`;
-	deleteButton.innerText = '-'
+	deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>'
 	deleteButton.addEventListener('click', () => {
 		library.splice(index);
 		deleteButton.remove();
@@ -52,9 +52,9 @@ function createDeleteButton(index, bookContainer) {
 
 function createReadButton(book, bookDiv, index) {
 	let readButton = document.createElement('button');
-	readButton.classList.add('add-button');
-	readButton.id = `add-button-${index}`;
-	readButton.innerText = '+'
+	readButton.classList.add('book-icon');
+	readButton.id = `toggle-read-${index}`;
+	readButton.innerHTML = '<i class="fa-solid fa-plus"></i>'
 	readButton.addEventListener('click', () => {
 		book.toggleRead();
 		bookDiv.innerText = book.info();
